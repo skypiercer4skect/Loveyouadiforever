@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<kepala>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+Aku mencintaimu Adi Selamanya ❤️
+
+< gaya >
+* {
+margin: 0;
+padding: 0;
+ukuran kotak: kotak-kotak;
+}
+
+tubuh {
+overflow: hidden;
+keluarga font: Georgia, serif;
+}
+
+.scene {
+Tinggi: 100bh;
+lebar: 100%;
+posisi: relatif;
+overflow: hidden;
+latar belakang: linear-gradien
+#101c42, #58456e, #e89a9a
+  );
+}
+
+/* STARS */ Aku akan menembakmu.
+Bintang.
+posisi: mutlak;
+serangga: 0;
+gambar latar belakang:
+    radial-gradient(white 1px, transparent 2px);
+  background-size: 50px 50px;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .4; }
+  to { opacity: 1; }
+}
+
+/* MOON */
+.moon {
+  position: absolute;
+  top: 9%;
+  right: 15%;
+  width: 85px;
+  height: 85px;
+  background: #fff1c9;
+  border-radius: 50%;
+  box-shadow: 0 0 45px #fff1c9;
+}
+
+/* TEXT */
+.message {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  padding: 15px;
+  animation: fade 3s ease;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(30px, 7vw, 58px);
+  text-shadow: 0 0 20px pink,
+               0 0 40px #ff6b9d;
+  letter-spacing: 2px;
+}
+
+p {
+  color: #ffe2ec;
+  font-size: 23px;
+  margin-top: 20px;
+}
+
+.heart {
+  font-size: 45px;
+  margin-top: 20px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.4); }
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* OCEAN */
+.ocean {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 43%;
+  background: linear-gradient(
+    #2586a5, #075077, #031d3d
+  );
+}
+
+/* WAVES */
+.wave {
+  position: absolute;
+  top: -45px;
+  left: -50%;
+  width: 200%;
+  height: 90px;
+  border-radius: 43%;
+  background: rgba(255,255,255,.3);
+  animation: wave 7s linear infinite;
+}
+
+.wave:nth-child(2) {
+  top: -30px;
+  background: rgba(255,255,255,.2);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+.wave:nth-child(3) {
+  top: -15px;
+  background: rgba(255,255,255,.12);
+  animation-duration: 13s;
+}
+
+@keyframes wave {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* MOONLIGHT ON SEA */
+.light {
+  position: absolute;
+  top: 0;
+  left: 43%;
+  width: 100px;
+  height: 100%;
+  background: rgba(255,240,190,.25);
+  filter: blur(22px);
+  animation: shine 3s infinite alternate;
+}
+
+@keyframes shine {
+  from { opacity: .2; }
+  to { opacity: .8; }
+}
+
+/* FLOATING HEARTS */
+.floating {
+  position: absolute;
+  bottom: -30px;
+  color: pink;
+  font-size: 25px;
+  animation: float 8s linear forwards;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <div class="stars"></div>
+  <div class="moon"></div>
+
+  <div class="message">
+    <h1>I LOVE YOU</h1>
+    <p>ADI FOREVER ❤️</p>
+    <div class="heart">💗</div>
+  </div>
+
+  <div class="ocean">
+    <div class="light"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
+
+</div>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+
+  heart.className = "floating";
+  heart.innerHTML = "♥";
+
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animationDuration =
+    (5 + Math.random() * 5) + "s";
+
+  document.querySelector(".scene")
+    .appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10000);
+}
+
+setInterval(createHeart, 600);
+</script>
+
+</body>
+  </html>
+  
